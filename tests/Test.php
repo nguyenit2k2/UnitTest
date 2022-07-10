@@ -1,6 +1,6 @@
 <?php
 
-class CalculatorTest extends \PHPUnit\Framework\TestCase{
+class Test extends \PHPUnit\Framework\TestCase{
     public function testAdd() {
 
         $calculator = new App\Calculator;
@@ -11,16 +11,16 @@ class CalculatorTest extends \PHPUnit\Framework\TestCase{
     public function testSubtract() {
 
         $calculator = new App\Calculator;
-        $result = $calculator->subtract(20,5);
+        $result = $calculator->subtract(11,5);
 
-        $this->assertEquals(15,$result);
+        $this->assertEquals(6,$result);
     }
     public function testMultiply(){
 
         $calculator = new App\Calculator;
-        $result = $calculator->multiply(2,5);
+        $result = $calculator->multiply(3,5);
 
-        $this->assertEquals(10,$result);
+        $this->assertEquals(15,$result);
     }
     public function testDivide(){
 
@@ -29,4 +29,12 @@ class CalculatorTest extends \PHPUnit\Framework\TestCase{
 
         $this->assertEquals(2,$result);
     }
+    public function testPrime() {
+
+        $prime = new App\CheckPrime;
+        $check = $prime->checkPrime(2);
+
+        $this->assertTrue($check);
+    }
+
 }
